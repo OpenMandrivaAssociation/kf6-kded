@@ -30,6 +30,7 @@ BuildRequires: cmake(KF6CoreAddons)
 BuildRequires: cmake(KF6Crash)
 BuildRequires: cmake(KF6DBusAddons)
 BuildRequires: cmake(KF6Service)
+BuildRequires: cmake(KF6DocTools)
 
 %description
 Central daemon of KDE work spaces
