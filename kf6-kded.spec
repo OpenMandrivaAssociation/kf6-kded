@@ -1,5 +1,5 @@
 %define devname %mklibname KF6KDED -d
-%define git 20230513
+%define git 20230525
 
 Name: kf6-kded
 Version: 5.240.0
