@@ -1,5 +1,5 @@
 %define devname %mklibname KF6KDED -d
-%define git 20230627
+%define git 20230715
 
 Name: kf6-kded
 Version: 5.240.0
@@ -62,12 +62,12 @@ Central daemon of KDE work spaces
 
 %files -f %{name}.lang
 %{_datadir}/qlogging-categories6/kded.*
-%{_bindir}/kded5
-%{_prefix}/lib/systemd/user/plasma-kded.service
-%{_datadir}/applications/org.kde.kded5.desktop
-%{_datadir}/dbus-1/interfaces/org.kde.kded5.xml
-%{_datadir}/dbus-1/services/org.kde.kded5.service
-%{_mandir}/man8/kded5.8*
+%{_bindir}/kded6
+%{_prefix}/lib/systemd/user/plasma-kded6.service
+%{_datadir}/applications/org.kde.kded6.desktop
+%{_datadir}/dbus-1/interfaces/org.kde.kded6.xml
+%{_datadir}/dbus-1/services/org.kde.kded6.service
+%{_mandir}/man8/kded6.8*
 
 %files -n %{devname}
 %{_libdir}/cmake/KF6KDED
