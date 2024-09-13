@@ -5,7 +5,7 @@
 #define git 20240217
 
 Name: kf6-kded
-Version: 6.5.0
+Version: 6.6.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kded/-/archive/master/kded-master.tar.bz2#/kded-%{git}.tar.bz2
