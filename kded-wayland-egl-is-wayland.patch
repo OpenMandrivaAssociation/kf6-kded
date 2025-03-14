@@ -1,0 +1,12 @@
+diff -up kded-6.11.0/src/kded.cpp.omv~ kded-6.11.0/src/kded.cpp
+--- kded-6.11.0/src/kded.cpp.omv~	2025-03-14 02:16:10.073098754 +0100
++++ kded-6.11.0/src/kded.cpp	2025-03-14 02:23:08.665338607 +0100
+@@ -240,7 +240,7 @@ bool Kded::platformSupportsModule(const
+ {
+     const QStringList supportedPlatforms = module.value(QStringLiteral("X-KDE-OnlyShowOnQtPlatforms"), QStringList());
+ 
+-    return supportedPlatforms.isEmpty() || supportedPlatforms.contains(qApp->platformName());
++    return supportedPlatforms.isEmpty() || supportedPlatforms.contains(qApp->platformName()) || (qApp->platformName().startsWith(QStringLiteral("wayland")) && supportedPlatforms.contains(QStringLiteral("wayland")));
+ }
+ 
+ bool Kded::isModuleLoadedOnDemand(const QString &obj) const

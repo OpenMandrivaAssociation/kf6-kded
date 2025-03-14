@@ -6,7 +6,7 @@
 
 Name: kf6-kded
 Version: 6.11.0
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kded/-/archive/master/kded-master.tar.bz2#/kded-%{git}.tar.bz2
 %else
@@ -39,6 +39,9 @@ BuildRequires: cmake(KF6Crash)
 BuildRequires: cmake(KF6DBusAddons)
 BuildRequires: cmake(KF6Service)
 BuildRequires: cmake(KF6DocTools)
+
+%patchlist
+kded-wayland-egl-is-wayland.patch
 
 %description
 Central daemon of KDE work spaces
