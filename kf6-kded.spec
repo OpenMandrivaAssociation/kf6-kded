@@ -5,7 +5,7 @@
 #define git 20240217
 
 Name: kf6-kded
-Version: 6.28.0
+Version: 6.29.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kded/-/archive/master/kded-master.tar.bz2#/kded-%{git}.tar.bz2
@@ -39,6 +39,8 @@ BuildRequires: cmake(KF6Crash)
 BuildRequires: cmake(KF6DBusAddons)
 BuildRequires: cmake(KF6Service)
 BuildRequires: cmake(KF6DocTools)
+BuildSystem:	cmake
+BuildOption:	-DBUILD_QCH:BOOL=ON
 
 %patchlist
 kded-wayland-egl-is-wayland.patch
@@ -55,21 +57,6 @@ Requires: %{name} = %{EVRD}
 Development files (Headers etc.) for %{name}.
 
 Central daemon of KDE work spaces
-
-%prep
-%autosetup -p1 -n kded-6.28.0
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-%find_lang %{name} --all-name --with-html --with-qt --with-man
 
 %files -f %{name}.lang
 %{_datadir}/qlogging-categories6/kded.*
